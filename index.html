@@ -8,12 +8,203 @@
   <meta name="description"
     content="Portfolio of Virgi, a Front End Developer specializing in creating responsive and user-friendly web applications.">
   <meta name="author" content="Virgi">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Styling & Font -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <title>Portfolio Virgi | Front End Developer</title>
 </head>
 
 <body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="index.html">Virgi</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Experience</a></li>
+          <li><a href="#contact">Message</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main Section -->
+  <main>
+    <!-- Hero Section -->
+    <section class="container">
+      <div class="hero">
+        <!-- Banner Image -->
+        <img src="https://placehold.co/1200x700" alt="Banner Image" class="banner-image">
+        <!-- Content Section -->
+        <div class="content">
+          <h1>Hi Guest, Virgi Here</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="container">
+      <div class="grid">
+        <!-- My Contact Section -->
+        <section class="my-contact col-span-contact">
+          <h2>My Contact</h2>
+          <!-- Location -->
+          <div>
+            <h3 class="contact-header">Location: </h3>
+            <span>Bandung, Jawa Barat, Indonesia</span>
+          </div>
+          <!-- Phone Number -->
+          <div>
+            <h3 class="contact-header">Phone Number: </h3>
+            <span>+62 896 0378 4944</span>
+          </div>
+          <!-- Email -->
+          <div>
+            <h3 class="contact-header">Email: </h3>
+            <span>virgiriyadi2404@gmail.com</span>
+          </div>
+        </section>
+        <!-- About Me Section -->
+        <section class="about col-span-about">
+          <h2>About Me</h2>
+          <p>I’m a fresh graduate of 2025 with a strong passion for web development and modern frontend
+            technologies. I enjoy building clean, responsive, and user-friendly web interfaces, and I’m always eager to
+            learn and grow as a developer.
+          </p>
+          <p>
+            I’m familiar with popular frontend frameworks like <strong class="strong">Vue</strong>, <strong
+              class="strong">Nuxt</strong> and <strong class="strong">React</strong>, and I love using <strong
+              class="strong">Tailwind CSS</strong> and <strong class="strong">Bootstrap</strong> to create visually
+            appealing and functional designs. On the backend, I’ve worked with <strong class="strong">Laravel</strong>
+            and <strong class="strong">MySQL</strong>, allowing me to build full-stack web applications with solid
+            architecture and database integration.
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section class="container">
+      <div class="grid">
+        <!-- Experience Section -->
+        <section class="experience col-span-half">
+          <h2>Experience</h2>
+          <ul>
+            <li>
+              <strong class="strong">Internship at Pusat Survei Geologi | 2024</strong><br>
+              <ul>
+                <li class="list">Developed 5 Laravel-based applications for internal needs.</li>
+                <li class="list">Work in an Agile team to complete projects within tight deadlines.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <!-- Education Section -->
+        <section class="education col-span-half">
+          <h2>Education</h2>
+          <ul>
+            <li>
+              <strong class="strong">SMKN 2 Bandung | 2022 - 2025</strong><br>
+              Vocational High School – Software Engineering
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <!-- Message Me Section -->
+    <section class="container">
+      <div class="grid">
+        <section class="message-me col-span-full">
+          <!-- Form -->
+          <h2>Message Me</h2>
+          <div class="grid">
+            <form action="POST" class="border-form col-span-half">
+              <!-- Name -->
+              <section class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" autocomplete="off" required>
+              </section>
+              <div class="grid">
+                <!-- Birth Date -->
+                <section class="form-group col-span-half">
+                  <label for="birth-date">Birth Date:</label>
+                  <input type="date" id="birth-date" name="birth-date" required>
+                </section>
+                <!-- Gender -->
+                <section class="form-group col-span-half">
+                  <label for="gender">Gender:</label>
+                  <div class="gender">
+                    <input type="radio" id="male" name="gender" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" required>
+                    <label for="female">Female</label>
+                  </div>
+                </section>
+              </div>
+              <!-- Message -->
+              <section class="form-group">
+                <label for="message">Message:</label>
+                <textarea name="message" id="message"></textarea>
+              </section>
+              <button type="submit">Send Message</button>
+            </form>
+            <!-- Result -->
+            <div class="border-form col-span-half">
+              <!-- Current Time -->
+              <section class="form-group">
+                <span>Current Time:</span>
+                <div class="border-input">
+                  Fri Jun 17 2022
+                </div>
+              </section>
+              <!-- Name -->
+              <section class="form-group">
+                <span>Name:</span>
+                <div class="border-input">
+                  Asel
+                </div>
+              </section>
+              <div class="grid">
+                <!-- Birth Date -->
+                <section class="form-group col-span-half">
+                  <span>Birth Date:</span>
+                  <div class="border-input">
+                    28/07/2025
+                  </div>
+                </section>
+                <!-- Gender -->
+                <section class="form-group col-span-half">
+                  <span>Gender:</span>
+                  <div class="border-input">
+                    Female
+                  </div>
+                </section>
+              </div>
+              <!-- Message -->
+              <section class="form-group">
+                <span>Message:</span>
+                <div class="border-input">
+                  Yahaha Hayuu Cape banget mas ngoding seharian
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+
+  </footer>
+
+  <!-- Script for Logic -->
   <script src="js/script.js"></script>
 </body>
 
