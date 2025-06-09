@@ -10,20 +10,21 @@
   --white-900: #F8F8F8;
   --white-800: #bebebe;
   --border-slate: hsla(240, 2%, 48%, .2);
-  --black-900: #0e0e0e;
+  --black-900: #0a0a0a;
   --black-800: #121214;
   --primary: #EB5D3A;
   --primary-darker: #c74a2b;
 }
 
 html {
+  scroll-padding-top: 100px;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Satoshi', sans-serif;
   background-color: var(--black-900);
-  margin-top: 16px;
+  margin: 16px 0px;
   overflow-x: hidden;
 }
 
@@ -73,6 +74,10 @@ h2 {
   font-weight: 700;
 }
 
+main {
+  margin-top: 112px;
+}
+
 /* Form Visitor Style */
 .blur-overlay {
   position: absolute;
@@ -95,6 +100,7 @@ h2 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   width: 300px;
   z-index: 10;
+  box-shadow: inset 0 .362176px .651917px -1px hsla(0,0%,100%,.025),inset 0 3px 5.4px -2px hsla(0,0%,100%,.036);
 }
 
 .form-box h2 {
@@ -127,13 +133,21 @@ h2 {
 }
 
 /* Header Style */
+header.container {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0px;
+}
+
 nav{
   background-color: var(--black-900);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 0px;
-  border-radius: 16px;
 }
 
 .burger {
@@ -151,7 +165,6 @@ nav{
 }
 
 .nav-links {
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,8 +173,16 @@ nav{
   transition: all .3s ease-in-out;
 }
 
+.nav-links a {
+  transition: all .3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
 .nav-links.active {
-  right: 32px;
+  right: 0px;
 }
 
 li a {
@@ -237,6 +258,7 @@ li a {
   gap: 16px;
   padding: 24px;
   border-radius: 16px;
+  box-shadow: inset 0 .362176px .651917px -1px hsla(0,0%,100%,.025),inset 0 3px 5.4px -2px hsla(0,0%,100%,.036);
 }
 
 .contact-header {
@@ -257,6 +279,7 @@ li a {
   background-color: var(--black-800);
   padding: 24px;
   border-radius: 16px;
+  box-shadow: inset 0 .362176px .651917px -1px hsla(0,0%,100%,.025),inset 0 3px 5.4px -2px hsla(0,0%,100%,.036);
 }
 
 .about p {
@@ -271,6 +294,7 @@ li a {
   background-color: var(--black-800);
   padding: 24px;
   border-radius: 16px;
+  box-shadow: inset 0 .362176px .651917px -1px hsla(0,0%,100%,.025),inset 0 3px 5.4px -2px hsla(0,0%,100%,.036);
 }
 
 .education ul li {
@@ -284,6 +308,7 @@ li a {
   background-color: var(--black-800);
   padding: 24px;
   border-radius: 16px;
+  box-shadow: inset 0 .362176px .651917px -1px hsla(0,0%,100%,.025),inset 0 3px 5.4px -2px hsla(0,0%,100%,.036);
 }
 
 .experience li {
@@ -304,6 +329,7 @@ li ul li.list {
   background-color: var(--black-800);
   padding: 24px;
   border-radius: 16px;
+  box-shadow: inset 0 .362176px .651917px -1px hsla(0,0%,100%,.025),inset 0 3px 5.4px -2px hsla(0,0%,100%,.036);
 }
 
 .message-me h2 {
@@ -351,12 +377,32 @@ li ul li.list {
 }
 
 form button {
+  cursor: pointer;
   background-color: var(--primary);
   width: 25%;
   border: none;
   padding: 12px 16px;
   color: var(--white-900);
   border-radius: 8px;
+}
+
+form button:hover {
+  background-color: var(--primary-darker);
+}
+
+/* Footer Style */
+footer {
+  color: var(--white-800);
+  font-weight: 500;
+  padding: 24px 0px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer span {
+  color: var(--primary);
 }
 
 /* Responsive */
@@ -395,6 +441,12 @@ form button {
   .col-span-half {
     grid-column: span 8;
   }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -418,6 +470,11 @@ form button {
   h1 {
     color: var(--white-900);
   }
+
+  main {
+    margin-top: 190px;
+  }
+
   .hero {
     margin-top: 120px;
     position: relative;
@@ -432,14 +489,14 @@ form button {
     align-items: end;
     display: flex;
     flex-direction: column;
-    top: 100px;
-    right: -50%;
+    top: 112px;
+    right: -80%;
     padding: 16px;
     border-radius: 16px;
     border: 1px solid var(--primary);
     background-color: var(--black-900);
   }
-  
+
   .content {
     text-align: left;
     top: -80px;
