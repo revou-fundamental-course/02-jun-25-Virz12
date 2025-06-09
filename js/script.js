@@ -1,5 +1,22 @@
 document.body.style.overflowY = "hidden";
 
+// Check if localStorage has name key
+if (sessionStorage.getItem("name")) {
+  const visitorName = sessionStorage.getItem("name")
+  setName(visitorName);
+}
+
+// Set Visitor Name
+function setName(visitorName) {
+  // Append visitor name to page and localStorage
+  document.querySelector(".visitor-name").innerHTML = visitorName;
+
+  // Remove visitor name input section
+  document.querySelector(".blur-overlay").style.display = "none";
+  document.querySelector(".form-box").style.display = "none";
+  document.body.style.overflowY = "auto";
+}
+
 // Burger Menu - START
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav-links");
@@ -9,21 +26,16 @@ burger.addEventListener("click", () => {
 // Butger Menu - END
 
 // Visitor Name Function - START
-document.querySelector(".form-box").addEventListener('submit', setName);
+document.querySelector(".form-box").addEventListener('submit', submitName);
 
-function setName(e) {
+function submitName(e) {
   e.preventDefault();
 
   // Initialize visitor name variable
   const visitorName = document.getElementById("visitor-name").value.trim();
+  sessionStorage.setItem("name", visitorName);
 
-  // Append visitor name to page
-  document.querySelector(".visitor-name").innerHTML = visitorName;
-
-  // Remove visitor name input section
-  document.querySelector(".blur-overlay").style.display = "none";
-  document.querySelector(".form-box").style.display = "none";
-  document.body.style.overflowY = "auto";
+  setName(visitorName);
 
   return;
 }
