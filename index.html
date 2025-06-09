@@ -16,9 +16,18 @@
 </head>
 
 <body>
+  <!-- Visitor Input Name Section -->
+  <div class="blur-overlay"></div>
+  <form class="form-box">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="visitor-name" name="visitor-name" placeholder="Your name" required>
+    <button type="submit">Submit</button>
+  </form>
+
   <!-- Header Section -->
   <header>
     <div class="container">
+      <!-- Navigation -->
       <nav>
         <div class="logo">
           <a href="index.html">Virgi</a>
@@ -26,8 +35,11 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#education">Experience</a></li>
-          <li><a href="#contact">Message</a></li>
+          <li><a href="#message-me">Message Me</a></li>
         </ul>
+        <div class="burger">
+          =
+        </div>
       </nav>
     </div>
   </header>
@@ -38,10 +50,23 @@
     <section class="container">
       <div class="hero">
         <!-- Banner Image -->
-        <img src="https://placehold.co/1200x700" alt="Banner Image" class="banner-image">
+        <div class="banner-container">
+          <div class="banner-image" onclick="window.open('https:/\/\\virz-portfolio.vercel.app')">
+            <img src="https://i.ibb.co/Z7dCLmP/porto.png" alt="Banner Image" class="image">
+            <div class="caption">Other Portfolio</div>
+          </div>
+          <div class="banner-image" onclick="window.open('https:/\/\\github.com/Virz12')">
+            <img src="https://i.ibb.co/B2cmY57S/gothub.png" alt="Banner Image" class="image">
+            <div class="caption">My Github Profile</div>
+          </div>
+
+          <!-- Pagination Arrow -->
+          <a class="previous" onclick="moveSlide(-1)">❮</a>
+          <a class="next" onclick="moveSlide(1)">❯</a>
+        </div>
         <!-- Content Section -->
         <div class="content">
-          <h1>Hi Guest, Virgi Here</h1>
+          <h1>Hi <span class="visitor-name"></span>, Virgi Here</h1>
         </div>
       </div>
     </section>
@@ -88,7 +113,7 @@
     </section>
 
     <!-- Experience & Education Section -->
-    <section class="container">
+    <section id="education" class="container">
       <div class="grid">
         <!-- Experience Section -->
         <section class="experience col-span-half">
@@ -117,17 +142,17 @@
     </section>
 
     <!-- Message Me Section -->
-    <section class="container">
+    <section id="message-me" class="container">
       <div class="grid">
         <section class="message-me col-span-full">
           <!-- Form -->
           <h2>Message Me</h2>
           <div class="grid">
-            <form action="POST" class="border-form col-span-half">
+            <form class="border-form col-span-half contact-form">
               <!-- Name -->
               <section class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" autocomplete="off" required>
+                <input type="text" id="name" name="name" minlength="3" autocomplete="off" required>
               </section>
               <div class="grid">
                 <!-- Birth Date -->
@@ -139,9 +164,9 @@
                 <section class="form-group col-span-half">
                   <label for="gender">Gender:</label>
                   <div class="gender">
-                    <input type="radio" id="male" name="gender" required>
+                    <input type="radio" value="Male" id="male" name="gender" required>
                     <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" required>
+                    <input type="radio" value="Female" id="female" name="gender" required>
                     <label for="female">Female</label>
                   </div>
                 </section>
@@ -158,14 +183,14 @@
               <!-- Current Time -->
               <section class="form-group">
                 <span>Current Time:</span>
-                <div class="border-input">
+                <div class="border-input" id="current-time">
                   Fri Jun 17 2022
                 </div>
               </section>
               <!-- Name -->
               <section class="form-group">
                 <span>Name:</span>
-                <div class="border-input">
+                <div class="border-input" id="submit-name">
                   Asel
                 </div>
               </section>
@@ -173,14 +198,14 @@
                 <!-- Birth Date -->
                 <section class="form-group col-span-half">
                   <span>Birth Date:</span>
-                  <div class="border-input">
+                  <div class="border-input" id="submit-birth-date">
                     28/07/2025
                   </div>
                 </section>
                 <!-- Gender -->
                 <section class="form-group col-span-half">
                   <span>Gender:</span>
-                  <div class="border-input">
+                  <div class="border-input" id="submit-gender">
                     Female
                   </div>
                 </section>
@@ -188,7 +213,7 @@
               <!-- Message -->
               <section class="form-group">
                 <span>Message:</span>
-                <div class="border-input">
+                <div class="border-input" id="submit-message">
                   Yahaha Hayuu Cape banget mas ngoding seharian
                 </div>
               </section>
