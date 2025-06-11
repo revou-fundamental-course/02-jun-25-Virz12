@@ -45,10 +45,12 @@ function submitName(e) {
 let slideIndex = 1;
 showSlides(slideIndex);
 
+// Move a banner to next slide
 function moveSlide(n) {
   showSlides(slideIndex += n);
 }
 
+// Showing a slide 
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("banner-image");
